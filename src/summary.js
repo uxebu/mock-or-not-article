@@ -27,7 +27,7 @@ var summary = {
   getMethodDetails: function(method) {
     return {
       exists: typeof method == 'function',
-      isDummy: ''+method == ''+function(){}
+      isDummy: ''+method == ''+this.dummyFunction
     };
   },
 

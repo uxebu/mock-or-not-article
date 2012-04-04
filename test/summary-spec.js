@@ -54,7 +54,6 @@ describe('forMethods (no mocking)', function() {
 
 });
 
-describe('getMethodDetails (no mocking)', function() {
 describe('getNumberOfImplementedMethods', function() {
 
   it('should return 2', function() {
@@ -85,6 +84,7 @@ describe('getNumberOfImplementedMethods', function() {
 });
 
 
+describe('getMethodDetails', function() {
 
   it('should return `isDummy=false`', function() {
     var actual = summary.getMethodDetails(function(){});
