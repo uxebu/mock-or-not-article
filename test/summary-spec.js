@@ -67,7 +67,7 @@ describe('getNumberOfImplementedMethods', function() {
     expect(actual).toBe(1);
   });
 
-  it('should return 0.5', function() {
+  it('should return 2', function() {
     var actual = summary.getNumberOfImplementedMethods([function() {}, function() {}]);
     expect(actual).toBe(2);
   });
