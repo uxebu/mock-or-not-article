@@ -53,3 +53,17 @@ describe('forMethods (no mocking)', function() {
   });
 
 });
+
+describe('getMethodDetails (no mocking)', function() {
+
+  it('should return `isDummy=false`', function() {
+    var actual = summary.getMethodDetails(function(){});
+    expect(actual.isDummy).toBe(false);
+  });
+
+  it('should return `isDummy=true`', function() {
+    var actual = summary.getMethodDetails(summary.dummyFunction);
+    expect(actual.isDummy).toBe(true);
+  });
+
+});
