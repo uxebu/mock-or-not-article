@@ -29,6 +29,10 @@ var summary = {
       exists: typeof method == 'function',
       isDummy: ''+method == ''+function(){}
     };
+  },
+
+  dummyFunction: function(){
+    console.warn('not implemented')
   }
 };
 

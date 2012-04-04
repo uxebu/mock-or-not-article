@@ -35,7 +35,7 @@ describe('forMethods (all mocked)', function() {
 describe('forMethods (no mocking)', function() {
 
   it('should return {numTotal:1, numImplemented:1}', function() {
-    var actual = summary.forMethods([function(){ return 1 }]);
+    var actual = summary.forMethods([function(){}]);
     var expected = {numTotal: 1, numImplemented:1};
     expect(actual).toEqual(expected);
   });
@@ -43,6 +43,12 @@ describe('forMethods (no mocking)', function() {
   it('should return {numTotal:0, numImplemented:0}', function() {
     var actual = summary.forMethods([]);
     var expected = {numTotal: 0, numImplemented:0};
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return {numTotal:1, numImplemented:0} for a dummy function', function() {
+    var actual = summary.forMethods([summary.dummyFunction]);
+    var expected = {numTotal: 1, numImplemented:0};
     expect(actual).toEqual(expected);
   });
 
