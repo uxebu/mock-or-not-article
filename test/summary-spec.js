@@ -55,6 +55,36 @@ describe('forMethods (no mocking)', function() {
 });
 
 describe('getMethodDetails (no mocking)', function() {
+describe('getNumberOfImplementedMethods', function() {
+
+  it('should return 2', function() {
+    var actual = summary.getNumberOfImplementedMethods([function() {}, function() {}]);
+    expect(actual).toBe(2);
+  });
+
+  it('should return 1', function() {
+    var actual = summary.getNumberOfImplementedMethods([function() {}]);
+    expect(actual).toBe(1);
+  });
+
+  it('should return 0.5', function() {
+    var actual = summary.getNumberOfImplementedMethods([function() {}, function() {}]);
+    expect(actual).toBe(2);
+  });
+
+  it('should return 0', function() {
+    var actual = summary.getNumberOfImplementedMethods([]);
+    expect(actual).toBe(0);
+  });
+
+  it('should return 0 for dummyFunctions only', function() {
+    var actual = summary.getNumberOfImplementedMethods([summary.dummyFunction, summary.dummyFunction]);
+    expect(actual).toBe(0);
+  });
+
+});
+
+
 
   it('should return `isDummy=false`', function() {
     var actual = summary.getMethodDetails(function(){});
